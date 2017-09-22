@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2016-02-09 17:15:11 +0000
-categories: la
+title:  "Learning Log 1"
+date:   2017-09-21 
+categories: C++, Python, OOP
 image:  /preview.jpg
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+#### Learn C++ OOP, https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cp3_OOP.html
+- Private section is for static variable/data structure
+- Public section is for functions
+- Dot operator
+- Constructor, a special function that has the function name same as the class name, used to construct and initialize all the data members
+- Convention for getter/setter and cont
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
 
