@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learning_Log1"
+title:  "Learning Log 1"
 date:   2017-09-21 
 categories: C++ Python OOP
 image:  /preview.jpg
