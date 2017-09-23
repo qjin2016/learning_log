@@ -9,6 +9,10 @@ image:  /preview.jpg
 - Jacobian matrix
 - Hessian matrix
 - mysic Python library for optimization problems
+- Convex optimization
+- Linear programming, Quaratic programming
+- Conic optimization 
+
 
 
 
