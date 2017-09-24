@@ -70,6 +70,91 @@ my_date = datetime.date(2017, 7, 10)
 print(Employee.is_workday(my_date))
 ```
 
+- subclasses, inheritance
 
+```python
+class Developer(Employee):
+  pass
+  
+# get resolution
+print(help(Developer))
+
+class Developer(Employee):
+  def __init__(self, first, last, pay, prog_lang):
+    super().__init__(first, last, pay)
+    # or
+    # Employee.__init__(self, first, last, pay)
+    
+    self.prog_lang = prog_lang
+
+dev_1 = Developer('xx', 'xx', xxx, 'Python)
+print(isinstance(dev1, Developer))
+print(issubclass(Developer, Employee))
+```
+
+- magic methods, used for printing object or customizing certain operations
+
+```python
+class Employee:
+  # class variable
+  raise_amt = 1.04
+  
+  def __init__(self, first, last, pay):
+    self.first = first
+    self.last = last
+    self.pay = pay
+    Employee.num_of_emps += 1
+    
+  # used for debugging purpose
+  # print(emp) will get the same results as print(emp.__repr__()) 
+  def __repr__(self):
+    return "Employee('{}', '{}', {})".format(self.first, self.last, self.pay)
+    
+  # similar as __repr__
+  def __str__(self):
+    return "{} - {}".formate(self.fullname(), self.email
+  
+  # add two employees salary
+  # use like this: emp1 + emp2
+  def __add__(self, other):
+    return self.pay + other.pay
+```
+
+- property decorators - getter, setter, deleter, to define a method and access it like an attribute
+
+```python
+class Employee:
+  
+  def __init__(self, first, last):
+    self.first = first
+    self.last = last
+  
+  @property 
+  def email(self):
+    return '{}.{}'.formate(self.first, self.last)
+    
+  @property
+  def fullname(self):
+    return '{} {}'.format(self.first, self.last)
+    
+  @fullname.setter
+  def fullname(self, name):
+    first, last = name.split(' ')
+    self.first = first
+    self.last = last
+    
+  @fullname.deleter
+  def fullname(self, name):
+    print('delete name!')
+    self.first = None
+    self.last = None
+  
+emp1 = Employee('Jone', 'Smith')
+print(emp1.email)
+
+emp1.fullname = 'Corey Sh'
+
+del emp1.fullname
+```
 
 
