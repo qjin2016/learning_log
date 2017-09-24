@@ -13,10 +13,10 @@ image:  /preview.jpg
 - Linear programming, Quaratic programming
 - Conic optimization 
 
-##### Linear Programming 
-- Decision Variables
-- Objective Function
-- Constraints
+##### Linear Programming (https://github.com/AnnaNican/optimizers.git)
+- Decision Variables, Objective Function, Constraints
+- To solve a linear problem, you need: Solver and Modeling Framework (SciPy, PULP)
+- Solver: Simplex Method
 
 
 
