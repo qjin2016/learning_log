@@ -6,7 +6,7 @@ categories: Python OOP
 image:  /preview.jpg
 ---
 #### OOP in Python (https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3)
-*class variable vs. instance variable
+- class variable vs. instance variable
 ```python
 class Employee:
   # class variable
@@ -15,11 +15,11 @@ class Employee:
   def __init__(self):
     Employee.num_of_emps += 1
 ```
-*self is used to refer to instance
+- self is used to refer to instance
 
-*class methods vs instance methods
+- class methods vs instance methods
 
-  * class method is an alternative way for constructor
+  - class method is an alternative way for constructor
   
 ```python
 class Employee:
@@ -45,7 +45,7 @@ class Employee:
 emp_str_1 = 'John-Doe-7000'
 new_emp_1 = Employee.from_string(emp_str_1)
 ```
-*class method passes cls as the first argument, instance method passes self as the first argument, while static method doesn't pass cls or self. Static method doesn't operate on class or instance.
+- class method passes cls as the first argument, instance method passes self as the first argument, while static method doesn't pass cls or self. Static method doesn't operate on class or instance.
 
 ```python
 class Employee:
