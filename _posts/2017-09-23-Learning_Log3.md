@@ -6,7 +6,7 @@ categories: Python OOP
 image:  /preview.jpg
 ---
 #### OOP in Python (https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3)
--class variable vs. instance variable
+*class variable vs. instance variable
 ```python
 class Employee:
   # class variable
@@ -15,9 +15,9 @@ class Employee:
   def __init__(self):
     Employee.num_of_emps += 1
 ```
--self is used to refer to instance
+*self is used to refer to instance
 
--class methods vs instance methods
+*class methods vs instance methods
 
   * class method is an alternative way for constructor
   
