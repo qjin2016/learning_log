@@ -13,6 +13,11 @@ image:  /preview.jpg
 - Linear programming, Quaratic programming
 - Conic optimization 
 
+##### Linear Programming 
+- Decision Variables
+- Objective Function
+- Constraints
+
 
 
 
