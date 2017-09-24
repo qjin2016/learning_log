@@ -18,7 +18,8 @@ class Employee:
 -self is used to refer to instance
 
 -class methods vs instance methods
-  -class method is an alternative way for constructor
+
+  * class method is an alternative way for constructor
   
 ```python
 class Employee:
