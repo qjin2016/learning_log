@@ -45,7 +45,30 @@ class Employee:
 emp_str_1 = 'John-Doe-7000'
 new_emp_1 = Employee.from_string(emp_str_1)
 ```
+*class method passes cls as the first argument, instance method passes self as the first argument, while static method doesn't pass cls or self. Static method doesn't operate on class or instance.
 
+```python
+class Employee:
+  # class variable
+  raise_amt = 1.04
+  
+  def __init__(self, first, last, pay):
+    self.first = first
+    self.last = last
+    self.pay = pay
+    Employee.num_of_emps += 1
+    
+  @staticmethod
+  def is_workday(day):
+    if day.weekday() == 5 or day.weekday() == 6:
+      return False
+    else:
+      return True
+    
+import datetime
+my_date = datetime.date(2017, 7, 10)
+print(Employee.is_workday(my_date))
+```
 
 
 
