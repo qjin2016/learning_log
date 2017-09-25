@@ -2,7 +2,7 @@
 layout: post
 title:  "Learning Log 3"
 date:   2017-09-23 
-categories: Python OOP
+categories: Python OOP C++ LeetCode WiggleSort2
 image:  /preview.jpg
 ---
 #### OOP in Python (https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3)
@@ -156,5 +156,9 @@ emp1.fullname = 'Corey Sh'
 
 del emp1.fullname
 ```
+
+### Leetcode, Wiggle Sort (https://leetcode.com/problems/wiggle-sort-ii/description/)
+
+### Leetcode 297, Serialize and Deserialize binary tree (https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/)
 
 
