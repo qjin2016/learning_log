@@ -2,7 +2,7 @@
 layout: post
 title:  "Learning Log 3"
 date:   2017-09-23 
-categories: Python OOP C++ LeetCode WiggleSort2
+categories: Python OOP C++ LeetCode WiggleSort2 Serialization/Deserialization
 image:  /preview.jpg
 ---
 #### OOP in Python (https://www.youtube.com/watch?v=rq8cL2XMM5M&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc&index=3)
