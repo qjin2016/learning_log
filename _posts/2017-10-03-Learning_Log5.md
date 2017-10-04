@@ -47,5 +47,33 @@ class Solution(object):
         return n
 ```
 
+  - solution 2 (union find):
+
+```python
+class Solution(object):
+    def get_root(self, root, i):
+        while i != root[i]:
+            root[i] = root[root[i]]
+            i = root[i]
+        return i
+        
+    def findCircleNum(self, M):
+        """
+        :type M: List[List[int]]
+        :rtype: int
+        """
+        root = [i for i in range(len(M))]
+        n = len(M)
+        for i in range(len(M)):
+            for j in range(len(M)):
+                if M[i][j] == 1:
+                    root1 = self.get_root(root, i)
+                    root2 = self.get_root(root, j)
+                    if root1 != root2:
+                        n -= 1
+                        root[root2] = root1
+        return n
+```
+
 
 
