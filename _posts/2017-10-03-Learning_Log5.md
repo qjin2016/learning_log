@@ -75,5 +75,12 @@ class Solution(object):
         return n
 ```
 
+- data buffer vs. cache,
+  - data buffer and cache are quite similar. Except that cache operates on the premise that the data will be used multiple times. 
+  
+- str() function in python operates by converting a python object into a string. A list can also be directly converted into a string.
+
+
+
 
 
