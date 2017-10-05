@@ -2,7 +2,7 @@
 layout: post
 title:  "Introduction to Optimization"
 date:   2017-10-05
-categories: Optimization
+categories: Optimization Test
 image:  /preview.jpg
 ---
 
