@@ -10,7 +10,7 @@ image:  /preview.jpg
 
 - 200 Number of Islands
 
-  - Solution 1
+  - Solution 1 (slow)
 
 ```python 
 from collections import deque
@@ -76,4 +76,16 @@ class Solution(object):
         self.__dfs(grid, x, y-1, n, m)
         self.__dfs(grid, x, y+1, n, m)
         
+```
+
+- 292 Nim Game (https://leetcode.com/problems/nim-game/description/)
+
+```python
+class Solution(object):
+    def canWinNim(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return n%4 != 0
 ```
