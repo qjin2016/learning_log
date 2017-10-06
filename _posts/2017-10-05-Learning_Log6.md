@@ -89,3 +89,8 @@ class Solution(object):
         """
         return n%4 != 0
 ```
+
+- 675 Cut Off Trees for Golf Event (https://leetcode.com/problems/cut-off-trees-for-golf-event/discuss/)
+
+- 332 Reconstruct Itinerary
+
