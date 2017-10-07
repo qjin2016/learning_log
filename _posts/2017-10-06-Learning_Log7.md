@@ -11,8 +11,8 @@ image:  /preview.jpg
 In a BST or ordered binary tree, 
 - the left subtree of a node contains only nodes with keys less than the node's key;
 - the right subtree of a node contains only nodes with keys greater than the node's key;
-- both the left and right subtrees must also be binary search trees
-- inorder traversal will output an ordered list in ascending order
+- both the left and right subtrees must also be binary search trees;
+- inorder traversal will output an ordered list in ascending order.
 
 (reference) [https://www.laurentluce.com/posts/binary-search-tree-library-in-python/comment-page-1/]
 
