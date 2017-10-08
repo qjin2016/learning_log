@@ -15,7 +15,7 @@ image:  /preview.jpg
 - 9 Palindrome Number (https://leetcode.com/problems/palindrome-number/description/)
 
   - Solution 1, convert to string, faster, because the slicing operation is optimized in C
-```python
+  ```python
 class Solution(object):
     def isPalindrome(self, x):
         """
@@ -25,7 +25,7 @@ class Solution(object):
         x = str(x)
         return x == x[::-1]
 ```
-
+  
   - Solution 2,
 
 ```python
