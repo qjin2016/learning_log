@@ -11,3 +11,10 @@ image:  /preview.jpg
 - 7 reverse integer (https://leetcode.com/problems/reverse-integer/description/)
 
 - 11 Container With Most Water (https://leetcode.com/problems/container-with-most-water/description/)
+
+### satellite imagery
+
+- color channel of near infrared is good for analyzing palnt life
+
+
+
