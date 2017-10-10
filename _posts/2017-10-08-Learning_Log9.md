@@ -18,7 +18,9 @@ image:  /preview.jpg
 
 - 14 Longest Common Prefix (https://leetcode.com/problems/longest-common-prefix/discuss/)
 
-- 
+- 15 3Sum (https://leetcode.com/problems/3sum/description/)
+
+- 18 4Sum (https://leetcode.com/problems/4sum/description/)
 
 ### satellite imagery
 
