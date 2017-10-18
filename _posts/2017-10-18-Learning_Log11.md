@@ -6,7 +6,7 @@ categories: Leetcode
 image:  /preview.jpg
 ---
 
-1, Intersection of Two Arrays
+349, Intersection of Two Arrays
 
 https://leetcode.com/problems/intersection-of-two-arrays/description/
 
