@@ -75,3 +75,29 @@ class Solution(object):
                 
         return j == len(p)
 ```
+
+198, House Robber
+
+https://leetcode.com/problems/house-robber/description/
+
+```python
+class Solution(object):
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if not nums: return 0
+        sums = [0 for i in nums]
+        for i in range(len(nums)):
+            if i == 0: sums[0] = nums[0]
+            
+            elif i == 1: sums[1] = max(nums[0:2])
+            
+            elif nums[i] + sums[i-2] > sums[i-1]:
+                sums[i] = nums[i] + sums[i-2]
+            else:
+                sums[i] = sums[i-1]
+        return sums[-1]
+```
+
