@@ -115,4 +115,22 @@ class Solution(object):
         return '00' not in bin(n) and '11' not in bin(n)
 ```
 
+338, Counting Bits
+
+https://leetcode.com/problems/counting-bits/discuss/
+
+```python
+class Solution(object):
+    def countBits(self, num):
+        """
+        :type num: int
+        :rtype: List[int]
+        """
+        f = [0 for i in range(num+1)]
+        
+        for i in range(num+1):
+            f[i] = f[i>>1] + (i&1)
+            
+        return f
+```
 
