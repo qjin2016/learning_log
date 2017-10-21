@@ -20,6 +20,8 @@ When the cache is full, the algorithm must choose which items to discard to make
 
 146 LRU Cache
 
+https://leetcode.com/problems/lru-cache/description/
+
 ```c++
 class LRUCache {
 public:
@@ -61,4 +63,100 @@ private:
     LI used;
     int _capacity;
 };
+```
+
+```python
+class LRUCache:
+
+    def __init__(self, capacity):
+        """
+        :type capacity: int
+        """
+        self.capacity = capacity
+        # tm is used to help keep track of the most recently used item
+        self.tm = 0
+        self.cache = {}
+        self.lru = {}
+        
+
+    def get(self, key):
+        """
+        :type key: int
+        :rtype: int
+        """
+        if key in self.cache:
+            self.lru[key] = self.tm
+            self.tm += 1
+            return self.cache[key]
+        return -1
+        
+
+    def put(self, key, value):
+        """
+        :type key: int
+        :type value: int
+        :rtype: void
+        """
+        if len(self.cache) >= self.capacity and key not in self.cache:
+            # find the LRU item
+            old_key = min(self.lru.keys(), key=lambda k:self.lru[k])
+            self.cache.pop(old_key)
+            self.lru.pop(old_key)
+        self.cache[key] = value
+        self.lru[key] = self.tm
+        self.tm += 1
+        
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
+```
+
+```python
+# an optimized approach than the previous Python code
+import collections
+
+class LRUCache:
+
+    def __init__(self, capacity):
+        """
+        :type capacity: int
+        """
+        self.capacity = capacity
+        self.cache = collections.OrderedDict()
+        
+
+    def get(self, key):
+        """
+        :type key: int
+        :rtype: int
+        """
+        try:
+            value = self.cache.pop(key)
+            self.cache[key] = value
+            return value
+        except KeyError:
+            return -1
+
+    def put(self, key, value):
+        """
+        :type key: int
+        :type value: int
+        :rtype: void
+        """
+        try:
+            self.cache.pop(key)
+        except KeyError:
+            if len(self.cache) >= self.capacity:
+                self.cache.popitem(last=False)
+        self.cache[key] = value
+        
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 ```
