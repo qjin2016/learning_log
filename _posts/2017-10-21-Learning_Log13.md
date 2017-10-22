@@ -152,8 +152,84 @@ class Solution(object):
         return dp[-1]
 ```
 
+### 714. Best Time to Buy and Sell Stock with Transaction Fee
 
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
 
+```C++
+class Solution {
+public:
+    int maxProfit(vector<int>& prices, int fee) {
+        int size = prices.size();
+        vector<int>buy(size+1, INT_MIN);
+        vector<int>sell(size+1, 0);
+        for(int i = 0; i < size; i++)
+        {
+            buy[i+1] = max(sell[i] - prices[i], buy[i]);
+            sell[i+1] = max(buy[i+1] + prices[i] - fee, sell[i]);
+        }
+        return sell.back();
+    }
+};
+```
+
+```python
+import sys
+class Solution:
+    def maxProfit(self, prices, fee):
+        """
+        :type prices: List[int]
+        :type fee: int
+        :rtype: int
+        """
+        n = len(prices)
+        buy = [-sys.maxsize for i in range(n+1)]
+        sell = [0 for i in range(n+1)]
+        for i in range(n):
+            buy[i+1] = max(sell[i] - prices[i], buy[i])
+            sell[i+1] = max(buy[i+1] + prices[i] - fee, sell[i])
+        return sell[-1]
+```
+
+### 322. Coin Change
+
+https://leetcode.com/problems/coin-change/discuss/
+
+```C++
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        int Max = amount + 1;
+        vector<int> dp(amount + 1, Max);
+        dp[0] = 0;
+        for (int i = 1; i <= amount; i++) {
+            for (int j = 0; j < coins.size(); j++) {
+                if (coins[j] <= i) {
+                    dp[i] = min(dp[i], dp[i - coins[j]] + 1);
+                }
+            }
+        }
+        return dp[amount] > amount ? -1 : dp[amount];
+    }
+};
+```
+
+```python
+class Solution(object):
+    def coinChange(self, coins, amount):
+        """
+        :type coins: List[int]
+        :type amount: int
+        :rtype: int
+        """
+        dp = [amount+1 for i in range(amount+1)]
+        dp[0] = 0
+        for i in range(1, amount+1):
+            for j in range(len(coins)):
+                if coins[j] <= i:
+                    dp[i] = min(dp[i], dp[i-coins[j]]+1)
+        return -1 if dp[-1] > amount else dp[-1]
+```
 
 
 
