@@ -231,7 +231,21 @@ class Solution(object):
         return -1 if dp[-1] > amount else dp[-1]
 ```
 
+### 401. Binary Watch
 
+https://leetcode.com/problems/binary-watch/description/
+
+```python
+class Solution(object):
+    def readBinaryWatch(self, num):
+        """
+        :type num: int
+        :rtype: List[str]
+        """
+        return ['%d:%02d' % (h, m)
+            for h in range(12) for m in range(60)
+            if (bin(h) + bin(m)).count('1') == num]
+```
 
 
 
