@@ -72,6 +72,18 @@ https://en.wikibooks.org/wiki/Memory_Management/Stacks_and_Heaps
 - stack-based
 
 - heap-based
+
+### SOAP (Simple Object Access Protocol) vs REST (Representational State Transfer)
+
+- SOAP is a protocol while REST is an architectural styple. 
+- SOAP is highly secure as it defines its own security. REST inherits security measures from the underlying transport.
+- SOAP message request is processed slower as compared with REST.
+- SOAP supports only XML while REST supports data formats like plain text, XML, HTML and JSON.
+- SOAP is commonly used in payment gateways, financial and telecommunication services while REST is commonly used in social media, web chat and mobile services.
+
+If the security is a major concern and the resources are not limited then we should use SOAP web services. Like if we are creating a web service for banking related work then we should go with SOAP as here high security is needed.
+
+On the other hand if security is not a major concern and we have limited resources. Or we want to create an API that will be easily used by other developers publicly then we should go with REST web services.
   
 
 ### 256. Paint House
