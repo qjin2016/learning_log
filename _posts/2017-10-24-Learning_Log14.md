@@ -56,7 +56,7 @@ image:  /preview.jpg
 https://leetcode.com/problems/longest-increasing-subsequence/description/
 
 ```python
-1st solution, DP:
+## 1st solution, DP:
 class Solution(object):
     def lengthOfLIS(self, nums):
         """
@@ -73,7 +73,7 @@ class Solution(object):
                         t[i] = t[j] + 1
         return max(t)
 
-2nd solution
+## 2nd solution
 class Solution(object):
     def lengthOfLIS(self, nums):
         """
