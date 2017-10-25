@@ -51,7 +51,49 @@ image:  /preview.jpg
 ### MapReduce
 
 
+### 300. Longest Increasing Subsequence
 
+https://leetcode.com/problems/longest-increasing-subsequence/description/
+
+```python
+1st solution, DP:
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n = len(nums)
+        if n <= 1: return n
+        t = [1 for i in range(n)]
+        for i in range(1, n):
+            for j in range(0, i):
+                if nums[j] < nums[i]:
+                    if t[j] + 1 > t[i]:
+                        t[i] = t[j] + 1
+        return max(t)
+
+2nd solution
+class Solution(object):
+    def lengthOfLIS(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        tails = [0] * len(nums)
+        size = 0
+        for x in nums:
+            i, j = 0, size
+            while i != j:
+                m = (i + j) / 2
+                if tails[m] < x:
+                    i = m + 1
+                else:
+                    j = m
+            tails[i] = x
+            size = max(i + 1, size)
+        return size
+```
 
 
 
