@@ -55,6 +55,14 @@ g.isCyclic()
 ### Beam Search 
 similar to BFS, with predetermined number of nodes for expansion in the next level.
 
+### NER, Named Entity Recognition
+Stanford NER toolkit is based upon conditional random field + carefully engineered features
+The goal of NER is to pick up named entities (organization, name, date) from text.
+
+ML sequence model for NER:
+
+
+
 
 
 
