@@ -38,3 +38,43 @@ class Solution(object):
         return [el[0] for el in res[:k]]
 ```
 
+### Trie (Prefix Tree)
+### 208. Implement Trie (Prefix Tree)
+
+https://leetcode.com/problems/implement-trie-prefix-tree/description/
+
+```python
+class TrieNode:
+    def __init__(self):
+        self.word = False
+        self.children = {}
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+        
+    def insert(self, word):
+        node = self.root
+        for i in word:
+            if i not in node.children:
+                node.children[i] = TrieNode()
+            node = node.children[i]
+        node.word = True
+        
+    def search(self, word):
+        node = self.root
+        for i in word:
+            if i not in node.children:
+                return False
+            node = node.children[i]
+        return node.word
+    
+    def startsWith(self, prefix):
+        node = self.root
+        for i in prefix:
+            if i not in node.children:
+                return False
+            node = node.children[i]
+        return True
+```
+
