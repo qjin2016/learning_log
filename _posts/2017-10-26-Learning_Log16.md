@@ -53,6 +53,10 @@ g.isCyclic()
 ```
 
 ### Beam Search 
+similar to BFS, with predetermined number of nodes for expansion in the next level.
+
+
+
 
 
 
