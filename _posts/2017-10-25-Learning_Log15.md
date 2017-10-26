@@ -10,7 +10,7 @@ image:  /preview.jpg
 
 https://leetcode.com/problems/top-k-frequent-words/description/
 
-```pyhton
+```python
 class Solution(object):
     def topKFrequent(self, words, k):
         """
