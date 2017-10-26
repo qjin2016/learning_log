@@ -52,6 +52,8 @@ g.isCyclic()
 # ref: http://www.geeksforgeeks.org/union-find/
 ```
 
+### Beam Search 
+
 
 
 
