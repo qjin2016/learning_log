@@ -55,16 +55,26 @@ g.isCyclic()
 ### Beam Search 
 similar to BFS, with predetermined number of nodes for expansion in the next level.
 
+### Tokenization
+Given a character sequence, tokenization is the process of chopping it into tokens (words/terms). During tokenization process, punctuation might be discarded. An naive way to tokenize a sentence is to chop on whitespace and throw away punctuation characters.
+
 ### NER, Named Entity Recognition
+https://www.youtube.com/watch?v=M1BpelGGeMk
 Stanford NER toolkit is based upon conditional random field + carefully engineered features
 The goal of NER is to pick up named entities (organization, name, date) from text.
 
 ML sequence model for NER:
 
+- IO encoding, binary encoding (a certain named entity exists or not), Stanford NER uses IO encoding;
+- BIO encoding, this further divides IO encoding into begin-of-entity or continuation-of-entity.
 
+Max Entropy Markov Model (MEMM) a.k.a. Conditional Markov Model (CMM):
 
+The classifer makes a single decision at a time, conditioned on evidence from observations and previous decisions.
 
-
+### An intro to CRF by Daphne: 
+https://www.youtube.com/watch?v=2BXoj778YU8
+used for image segmentation and NLP POS task, where features are highly correlated with each other.
 
 
 
