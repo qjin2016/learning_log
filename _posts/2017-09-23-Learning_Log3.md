@@ -157,8 +157,50 @@ emp1.fullname = 'Corey Sh'
 del emp1.fullname
 ```
 
-### Leetcode, Wiggle Sort (https://leetcode.com/problems/wiggle-sort-ii/description/)
+### 324. Wiggle Sort II
+https://leetcode.com/problems/wiggle-sort-ii/description/
+```python
+class Solution():
+	def wiggleSort(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: void Do not return anything, modify nums in-place instead.
+		"""
+		nums.sort()
+    
+		med = (len(nums)-1) // 2
 
-### Leetcode 297, Serialize and Deserialize binary tree (https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/)
+		nums[::2], nums[1::2] = nums[med::-1], nums[:med:-1]
+```
 
+### 297. Serialize and Deserialize Binary Tree
+https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+
+```python
+class Codec:
+    def serialize(self, root):
+        def serialize_helper(node):
+            if node:
+                vals.append(str(node.val))
+                serialize_helper(node.left)
+                serialize_helper(node.right)
+            else:
+                vals.append('#')
+        vals = []
+        serialize_helper(root)
+        return ''.join(vals)
+    
+    def deserialize(self, data):
+        def deserialize_helper():
+            val = next(vals)
+            if val == '#':
+                return None
+            node = TreeNode(int(val))
+            node.left = deserialize_helper()
+            node.right = deserialize_helper()
+            return node
+        
+        vals = data.split()
+        return deserialize_helper()
+```
 
