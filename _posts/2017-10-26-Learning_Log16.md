@@ -76,7 +76,23 @@ The classifer makes a single decision at a time, conditioned on evidence from ob
 https://www.youtube.com/watch?v=2BXoj778YU8
 used for image segmentation and NLP POS task, where features are highly correlated with each other.
 
+### 293. Flip Game
 
+https://leetcode.com/problems/flip-game/description/
 
+```python
+class Solution:
+    def generatePossibleNextMoves(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        if len(s) in [0, 1]: return []
+        res = []
+        for i in range(0, len(s)-1):
+            if s[i] == s[i+1] == '+':
+                res.append(s[:i]+'--'+s[i+2:])
+        return res
+```
 
 
