@@ -101,7 +101,9 @@ class Solution:
 
 - 126, Word Ladder 2 (https://leetcode.com/problems/word-ladder-ii/description/)
 
-- 547, Friend Circles (https://leetcode.com/problems/friend-circles/description/)
+### 547. Friend Circles 
+
+https://leetcode.com/problems/friend-circles/description/
 
   - solution 1 (DFS):
 
