@@ -85,11 +85,52 @@ class Solution(object):
         return head.next
 ```
 
-- 3 Longest Substring Without Repeating Characters (https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+### 3 Longest Substring Without Repeating Characters 
+https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 
-- 5 Longest Palindromic Substring (https://leetcode.com/problems/longest-palindromic-substring/discuss/)
+```python
+class Solution:
+    # @return an integer
+    def lengthOfLongestSubstring(self, s):
+        start = maxLength = 0
+        usedChar = {}
+        
+        for i in range(len(s)):
+            if s[i] in usedChar and start <= usedChar[s[i]]:
+                start = usedChar[s[i]] + 1
+            else:
+                maxLength = max(maxLength, i - start + 1)
 
-- 9 Palindrome Number (https://leetcode.com/problems/palindrome-number/description/)
+            usedChar[s[i]] = i
+
+        return maxLength
+```
+
+### 5 Longest Palindromic Substring 
+https://leetcode.com/problems/longest-palindromic-substring/discuss/
+
+```python
+class Solution:
+    # @return a string
+    def longestPalindrome(self, s):
+        if len(s)==0:
+        	return 0
+        maxLen=1
+        start=0
+        for i in xrange(len(s)):
+        	if i-maxLen >=1 and s[i-maxLen-1:i+1]==s[i-maxLen-1:i+1][::-1]:
+        		start=i-maxLen-1
+        		maxLen+=2
+        		continue
+
+        	if i-maxLen >=0 and s[i-maxLen:i+1]==s[i-maxLen:i+1][::-1]:
+        		start=i-maxLen
+        		maxLen+=1
+        return s[start:start+maxLen]
+```
+
+### 9 Palindrome Number
+https://leetcode.com/problems/palindrome-number/description/
 
   - Solution 1, convert to string, faster, because the slicing operation is optimized in C
 
