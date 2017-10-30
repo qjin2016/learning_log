@@ -161,4 +161,20 @@ class Solution(object):
             x = int(x/10)
         return x_copy == y
 ```
-- 
+
+### 342. Power of Four
+https://leetcode.com/problems/power-of-four/description/
+
+```python
+class Solution:
+    def isPowerOfFour(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        while num > 1 or num < -1:
+            if num % 4 != 0:
+                return False
+            num = num / 4
+        return True if num == 1 else False
+```
