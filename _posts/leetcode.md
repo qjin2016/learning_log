@@ -115,3 +115,25 @@ class MovingAverage(object):
 # obj = MovingAverage(size)
 # param_1 = obj.next(val)
 ```
+
+
+### 720. Longest Word in Dictionary
+
+https://leetcode.com/problems/longest-word-in-dictionary/discuss/
+
+```python
+class Solution(object):
+    def longestWord(self, words):
+        """
+        :type words: List[str]
+        :rtype: str
+        """
+        words, resword, res = sorted(words), '', set()
+        for word in words:
+            if len(word) == 1 or word[:-1] in res:
+                res.add(word)
+                resword = word if resword == '' else resword 
+                resword = word if len(word) > len(resword) else resword
+        return resword
+```
+
