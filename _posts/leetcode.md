@@ -166,7 +166,7 @@ class Solution(object):
 
 https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 
-```pyhton
+```python
 class Solution(object):
     def intersect(self, nums1, nums2):
         """
@@ -189,6 +189,116 @@ class Solution(object):
                 p1 += 1
                 p2 += 1
         return commons
+```
+
+
+### 270. Closest Binary Search Tree Value
+
+https://leetcode.com/problems/closest-binary-search-tree-value/description/
+
+```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def closestValue(self, root, target):
+        """
+        :type root: TreeNode
+        :type target: float
+        :rtype: int
+        """
+        path = []
+        while root:
+            path.append(root.val)
+            root = root.left if target < root.val else root.right
+        return min(path, key = lambda x: abs(target - x))
+```
+
+
+### 206. Reverse Linked List
+
+https://leetcode.com/problems/reverse-linked-list/description/
+
+#### solution 1
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        stack = []
+        while head:
+            stack.append(head.val)
+            head = head.next
+        
+        new_head = ListNode(None)
+        root = new_head
+        for v in stack[::-1]:
+            new_head.next = ListNode(v)
+            new_head = new_head.next
+        return root.next
+```
+
+#### solution2
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        prev = None
+        while head:
+            cur = head
+            head = head.next
+            cur.next = prev
+            prev = cur
+        return prev
+```
+
+
+### 141. Linked List Cycle
+
+https://leetcode.com/problems/linked-list-cycle/description/
+
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        if head is None: return False
+        walker = head
+        runner = head
+        while runner.next is not None and runner.next.next is not None:
+            walker = walker.next
+            runner = runner.next.next
+            if walker == runner: return True
+        return False
 ```
 
 
