@@ -137,3 +137,59 @@ class Solution(object):
         return resword
 ```
 
+
+### 167. Two Sum II - Input array is sorted
+
+https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+
+```python
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        start, end = 0, len(numbers)-1
+        while start < end:
+            cur_sum = numbers[start] + numbers[end]
+            if cur_sum > target:
+                end -= 1
+            elif cur_sum < target:
+                start += 1
+            else:
+                return start+1, end+1
+```
+
+
+### 350. Intersection of Two Arrays II
+
+https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+
+```pyhton
+class Solution(object):
+    def intersect(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        nums1 = sorted(nums1)
+        nums2 = sorted(nums2)
+        
+        p1, p2 = 0, 0
+        commons = []
+        while p1 < len(nums1) and p2 < len(nums2):
+            if nums1[p1] < nums2[p2]:
+                p1 += 1
+            elif nums1[p1] > nums2[p2]:
+                p2 += 1
+            else:
+                commons.append(nums1[p1])
+                p1 += 1
+                p2 += 1
+        return commons
+```
+
+
+
