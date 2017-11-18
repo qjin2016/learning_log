@@ -302,4 +302,34 @@ class Solution(object):
 ```
 
 
+### 234. Palindrome Linked List
+
+https://leetcode.com/problems/palindrome-linked-list/description/
+
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def isPalindrome(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        rev = None
+        fast = slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            rev, rev.next, slow = slow, rev, slow.next
+            # slow = slow.next
+        slow = slow.next if fast else slow
+        while rev and rev.val == slow.val:
+            slow = slow.next
+            rev = rev.next
+        return not rev
+```
+
 
