@@ -337,6 +337,7 @@ class Solution(object):
 
 https://leetcode.com/problems/palindrome-permutation/description/
 
+#### Solution1
 ```python
 class Solution(object):
     def canPermutePalindrome(self, s):
@@ -352,4 +353,15 @@ class Solution(object):
             elif i in arr:
                 arr.pop()
         return len(arr) == 1 or len(arr) == 0
+```
+
+#### Solution2
+```python
+class Solution(object):
+    def canPermutePalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return sum(v % 2 for v in collections.Counter(s).values()) < 2
 ```
