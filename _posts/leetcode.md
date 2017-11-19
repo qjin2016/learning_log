@@ -333,3 +333,23 @@ class Solution(object):
 ```
 
 
+### 266. Palindrome Permutation
+
+https://leetcode.com/problems/palindrome-permutation/description/
+
+```python
+class Solution(object):
+    def canPermutePalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s = sorted(s)
+        arr = []
+        for i in s:
+            if not arr or i not in arr:
+                arr.append(i)
+            elif i in arr:
+                arr.pop()
+        return len(arr) == 1 or len(arr) == 0
+```
