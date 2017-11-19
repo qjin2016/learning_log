@@ -467,3 +467,123 @@ class TwoSum(object):
 # obj.add(number)
 # param_2 = obj.find(value)
 ```
+
+
+### 290. Word Pattern
+
+https://leetcode.com/problems/word-pattern/description/
+
+#### solution1
+```python
+class Solution(object):
+    def wordPattern(self, pattern, str):
+        """
+        :type pattern: str
+        :type str: str
+        :rtype: bool
+        """
+        pattern_dict = {}
+        str_arr = str.split(' ')
+        if len(str_arr) != len(pattern): return False
+        
+        for p, s in zip(pattern, str_arr):
+            if p not in pattern_dict:
+                if s in pattern_dict.values():
+                    return False
+                pattern_dict[p] = s
+            else:
+                if pattern_dict[p] != s:
+                    return False
+        return True
+```
+
+#### solution2
+```python
+class Solution(object):
+    def wordPattern(self, pattern, str):
+        """
+        :type pattern: str
+        :type str: str
+        :rtype: bool
+        """
+        s = pattern
+        t = str.split(' ')
+        return map(s.find, s) == map(t.index, t)
+```
+
+
+### 438. Find All Anagrams in a String
+
+https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/
+
+#### solution 1(too slow...)
+```python
+class Solution:
+    def findAnagrams(self, s, p):
+        """
+        :type s: str
+        :type p: str
+        :rtype: List[int]
+        """
+        from collections import Counter
+        win_size = len(p)
+        
+        set_p = Counter(p)
+        idxs = []
+        i = 0
+        while i + win_size <= len(s):
+            if Counter(s[i:i+win_size]) == set_p:
+                idxs.append(i)
+            i += 1
+        return idxs
+```
+
+#### solution 2
+```python
+class Solution:
+    def findAnagrams(self, s, p):
+        """
+        :type s: str
+        :type p: str
+        :rtype: List[int]
+        """
+        from collections import Counter
+        res = []
+        pCounter = Counter(p)
+        sCounter = Counter(s[:len(p)-1])
+        for i in range(len(p)-1, len(s)):
+            sCounter[s[i]] += 1
+            if sCounter == pCounter:
+                res.append(i-len(p) + 1)
+            sCounter[s[i-len(p) + 1]] -= 1
+            if sCounter[s[i-len(p) + 1]] == 0:
+                del sCounter[s[i-len(p)+1]]
+        return res
+```
+
+
+### 500. Keyboard Row
+
+https://leetcode.com/problems/keyboard-row/discuss/
+
+```python
+class Solution:
+    def findWords(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        a=set('qwertyuiop')
+        b=set('asdfghjkl')
+        c=set('zxcvbnm')
+        ans=[]
+        for word in words:
+            t=set(word.lower())
+            if a&t==t:
+                ans.append(word)
+            if b&t==t:
+                ans.append(word)
+            if c&t==t:
+                ans.append(word)
+        return ans
+```
