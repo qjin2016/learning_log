@@ -587,3 +587,24 @@ class Solution:
                 ans.append(word)
         return ans
 ```
+
+
+### 258. Add Digits
+
+https://leetcode.com/problems/add-digits/description/
+
+```python
+class Solution:
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        while num >= 10:
+            temp_num = num
+            num = 0
+            while temp_num:
+                num += (temp_num % 10)
+                temp_num //= 10
+        return num
+```
