@@ -608,3 +608,35 @@ class Solution:
                 temp_num //= 10
         return num
 ```
+
+
+### 728. Self Dividing Numbers
+
+https://leetcode.com/problems/self-dividing-numbers/discuss/
+
+```python
+class Solution:
+    def helper(self, num):
+        num2 = num
+        while num > 0:
+            d = num % 10
+            num //= 10
+            if d == 0 or num2 % d != 0 :
+                return False
+        return True
+            
+    def selfDividingNumbers(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """
+        res = []
+        for i in range(left, right+1):
+            if 0 < i < 10:
+                res.append(i)
+            else:
+                if self.helper(i):
+                    res.append(i)
+        return res
+```
